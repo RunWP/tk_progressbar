@@ -1,0 +1,96 @@
+
+################################################################################
+#                                 TkProgressBar                                #
+################################################################################
+
+# Provide a Tkinter ProgressBar widget without Ttk
+
+# Options:
+# ----------------------------------------------------------
+#        Args       Description               Default
+# ----------------------------------------------------------
+#        length     Bar length                100
+#        bg         Background color          #E4E4E4
+#        color      Progress color            #808080
+#        fg         Text color                #1B1B1B
+#        value      Current progress value    0
+#        maximum    Maximum progress value    100
+#        showtxt    Text string visible       True
+
+################################################################################
+#                                    IMPORTS                                   #
+################################################################################
+
+from tkinter import Canvas
+
+################################################################################
+#                                   FUNCTIONS                                  #
+################################################################################
+
+# No function for this module
+
+################################################################################
+#                                     CLASS                                    #
+################################################################################
+
+class Tkprogressbar(Canvas):
+# <class 'Tkprogressbar'> widget to show progression status
+
+    self.__init__('master', '**kw'):
+    # Construct a ProgressBar widget with the parent MASTER.
+    # Valids arguments names: length, bg, color, fg, value, maximum, showtxt
+
+################################################################################
+#                                  PROPERTIES                                  #
+################################################################################
+
+        # Configurable Properties 'kwargs'
+        self.sprwdth = 100                 # SuperWidth           'length'
+        self.sprcolor = '#E4E4E4'          # SuperColor           'bg'
+        self.barcolor = '#808080'          # BarColor             'color'
+        self.txtcolor = '#1B1B1B'          # TextColor            'fg'
+        self.value = 0                     # ProgressBarValue     'value'
+        self.maximum = 100                 # ProgressBarMaximum   'maximum'
+        self.shwtxt = True                 # ShowTextOption       'showtxt'
+
+        # Calculable Properties
+        self.barposx = 0                   # BarPositionX
+        self.txtstr = "0%"                 # TextString
+        self.txtposx = 50                  # TextPositionX
+
+        # Constant Properties
+        self.sprhght = 20                  # SuperHeight
+        self.barposy = 20                  # BarPositionY
+        self.txtposy = 10                  # TextPositionY
+
+################################################################################
+#                                    METHODS                                   #
+################################################################################
+
+    self.set_all('**kw'):
+    # Set configurable properties from kwargs and re-calculate all
+
+    self.set_bar():
+    # Set progress bar properties only
+
+    self.update_all():
+    # Update parent canvas and primitives
+
+    self.update_bar():
+    # Update primitives only
+
+    self.config('**kw'):
+    # Set widget configuration from kwargs
+
+    self.set_value('value'):
+    # Set progress bar current value
+
+    self.set_maximum('value'):
+    # Set progress bar maximum value
+
+    self.showinfo():
+    # Display progress bar properties (Debug)
+
+################################################################################
+#                                      EOF                                     #
+################################################################################
